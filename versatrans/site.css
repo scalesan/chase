@@ -9,5 +9,17 @@ h1 {
 }
 
 label {
-    color:#fff
+  color: #fff;
 }
+
+.moveOver {
+  float: left;
+  margin-left: 5rem;
+
+}
+
+#submitButton {
+margin-left:-62rem;
+}
+
+
