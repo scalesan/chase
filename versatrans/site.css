@@ -1,9 +1,13 @@
 html {
   text-align: center;
-  background-color: rgb(60, 60, 168);
+  background-image: url(../versatrans/images/roll-of-money.jpg);
 }
 
 h1 {
   font-size: 7rem;
   color: white;
+}
+
+label {
+    color:#fff
 }
