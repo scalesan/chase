@@ -15,11 +15,22 @@ label {
 .moveOver {
   float: left;
   margin-left: 5rem;
-
 }
 
 #submitButton {
-margin-left:-62rem;
+  margin-left: -62rem;
 }
 
+a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+}
 
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
