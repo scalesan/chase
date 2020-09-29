@@ -6,8 +6,8 @@ document.getElementById("submitButton").onclick = function (e) {
       "&apikey=5KZBIG65DG43J3MN"
   )
     .then((res) => res.json())
-    .then((out) => {
-      console.log("Output: ", out);
+    .then((JSONOutput) => {
+      console.log("Output: ", JSONOutput);
     })
     .catch((err) => console.error(err));
 };
