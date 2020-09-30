@@ -34,3 +34,13 @@ a:hover {
 a:visited {
   color: purple;
 }
+
+section {
+  float: left;
+  margin-right: 20px;
+  color: white;
+  width: 30%;
+  height:15rem
+
+
+}
