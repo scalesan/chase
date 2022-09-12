@@ -5,18 +5,26 @@ const App = () => {
   const [name, setName] = useState({
     name:""
   })
+  const [email, setEmail] = useState({
+    email:""
+  })
 
-const handleNameEnteredChange = (e) => {
-  axios.get("https://docs.github.com/en/free-pro-team@latest/rest)")
+
+const handleNameEnteredChange = e => {
+  axios.get("https://docs.github.com/en/free-pro-team@latest/rest")
   .then((response) => {
     const users = response.filter(
-      e => response.name.includes(e.target.value)).map(filteredName => (
-        <li>
-          {e.target.value}
-        </li>
-      ))
-    }
-  )}
+    
+    
+  )})}
+
+  const handleEmailEnteredChange = e => {
+    axios.get("https://docs.github.com/en/free-pro-team@latest/rest")
+    .then((response) => {
+      const users = response.filter(
+      
+      
+    )})}
   
  
   return (
@@ -27,7 +35,12 @@ const handleNameEnteredChange = (e) => {
           type="text" 
           onChange={handleNameEnteredChange}
           placeholder = "Name"
-          />
+          />or enter email here
+          <input
+            type="text"
+            onChange = {handleEmailEnteredChange}
+            placeholder = "Email"
+            />
       </form>
       <ul>
         <li>
