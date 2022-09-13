@@ -2,45 +2,28 @@ import axios from 'axios';
 import { useState } from 'react';
 
 const App = () => {
-  const [name, setName] = useState({
-    name:""
-  })
-  const [email, setEmail] = useState({
-    email:""
-  })
-
-
 const handleNameEnteredChange = e => {
   axios.get("https://docs.github.com/en/free-pro-team@latest/rest")
   .then((response) => {
-    const users = response.filter(
-    
-    
-  )})}
-
-  const handleEmailEnteredChange = e => {
-    axios.get("https://docs.github.com/en/free-pro-team@latest/rest")
-    .then((response) => {
+    if ((e.target.value).includes('@')){
       const users = response.filter(
       
       
-    )})}
+    )}
+    else
+      {
+        
+      }})}
   
- 
   return (
     <div>
       <form>
-        Please begin typing the name: 
+        Please begin typing the name or email: 
         <input 
           type="text" 
           onChange={handleNameEnteredChange}
           placeholder = "Name"
-          />or enter email here
-          <input
-            type="text"
-            onChange = {handleEmailEnteredChange}
-            placeholder = "Email"
-            />
+          />
       </form>
       <ul>
         <li>
