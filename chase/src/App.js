@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 
-
 const App = () => {
   const [userData, setUserData] = useState([]);
   useEffect(() => {
@@ -30,7 +29,6 @@ const App = () => {
                 <td>{user.price}</td>
               </tr>
             </table>
-          
           ))}
         </ul>
       )}
