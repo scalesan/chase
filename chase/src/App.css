@@ -12,9 +12,16 @@ table  {
   
 }
 
-td{
+button{
   border: 1px solid;
-  width: 35%
+  width: 15%;
+  table-layout: fixed;
+  margin: auto;
+  text-align: center;
+}
+
+#firstButtonMargin{
+  margin-left: 30%;
 }
 
 
