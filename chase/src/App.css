@@ -15,6 +15,7 @@ table  {
 button{
   border: 1px solid;
   width: 15%;
+  height:15%;
   table-layout: fixed;
   margin: auto;
   text-align: center;
@@ -22,6 +23,18 @@ button{
 
 #firstButtonMargin{
   margin-left: 30%;
+}
+
+.macro{
+  background-color: white;
+}
+
+.equities{
+  background-color: blue;
+}
+
+.credit{
+  background-color: green;
 }
 
 

@@ -1,46 +1,28 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import _ from "lodash";
 
 const App = () => {
   const [userData, setUserData] = useState([]);
-  const [sortedUserDataByAssetClass, setSortedUserDataByAssetClass] = useState(
-    []
-  );
-  const [sortedPriceDescendingOrder, setSortedPriceDescendingOrder] = useState(
-    []
-  );
-  const [tickerInAlphabeticalOrder, setTickerInAlphabeticalOrder] = useState(
-    []
-  );
-
   useEffect(() => {
     fetchUserData();
   }, []);
-  const sortByTicker = () =>
-    [...userData].sort((a, b) => a.assetClass - b.assetClass);
-  const sortByAssetClass = () =>
-    [...userData].sort((a, b) => {
-      for (var i = 0; i < userData.length; i++) {
-        if (userData[i].assetClass === "Equities") {
-          return 1;
-        }
-        if (a.assetClass === "Macro") {
-          return 1;
-        }
-        if (b.assetClass === "Macro") {
-          return 1;
-        }
-        if (a.assetClass === "Credit") {
-          return 1;
-        } else {
-          return 0;
-        }
-      }
-    });
+  const sortByAssetClass = () => {
+    let sortedUserData = _.orderBy(userData, "assetClass", "asc");
+    setUserData(sortedUserData);
+  };
 
-  const sortByPrice = () => [...userData].sort((a, b) => a.price - b.price);
+  const sortByTicker = () => {
+    let sortedUserData = _.orderBy(userData, "ticker", "asc");
+    setUserData(sortedUserData);
+  };
+
+  const sortByPrice = () => {
+    let sortedUserData = _.orderBy(userData, "price", "desc");
+    setUserData(sortedUserData);
+  };
   const fetchUserData = () => {
-    fetch("http://localhost:3000/items")
+    fetch("http://localhost:3004/items")
       .then((response) => {
         return response.json();
       })
@@ -48,16 +30,17 @@ const App = () => {
         setUserData(data);
       });
   };
-
+  
   return (
     <div className="App">
       {userData.length > 0 && (
         <div>
           {userData.map((user, index) => (
             <table key={index}>
+
               <tbody>
                 <tr>
-                  <td className="borderOnRight">{user.assetClass}</td>
+                  <td className="borderOnRight color">{user.assetClass}</td>
                   <td className="borderOnRight">{user.price}</td>
                   <td>{user.ticker}</td>
                 </tr>
